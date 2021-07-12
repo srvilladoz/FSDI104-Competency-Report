@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Pet Salon</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="display-1">G&P Luxury Pet Salon</h1>
+
+        <div class="img-container">
+            <img src="GenieandPebbles.png" alt="Genie and Pebbles"></header>
+        </div>
+
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="register.html" tabindex="-1" aria-disabled="true">Register
+                </a>
+            </li>
+        </ul>
+    </header>
+    <table>
+        <tr>
+            <td>
+
+        <form action="#" onsubmit="event.preventDefault();onFormRegister();" autocomplete="off">
+            <!-- name,age,breed,service,ownerName,contactPhone-->
+            <div class="input-container">
+                <label class="form-label" for="name">Name:</label>
+                <input class="form-control" type="text" name="name" id="petName">
+            </div>
+            <div class="input-container">
+                <label class="form-label" for="age">Age:</label>
+                <input class="form-control" for="age" id="petAge">
+            </div>
+            <div class="input-container">
+                <label class="form-label" for="gender">Gender:</label>
+                <input class="form-control" for="gender" id="petGender">
+            </div>
+            <div class="input-container">
+                <label class="form-label" for="breed">Breed:</label>
+                <input class="form-control" for="breed" id="petBreed">
+            </div>
+            <div class="input-container">
+                <label for="petWeight">Weight:</label>
+                <input class="form-control" type="tel" name="weight" id="petWeight">
+            </div>
+            <div class="input-container">
+                <label class="form-label" for="service">Service:</label>
+                <select name="service" id="petService">
+                    <option value="" disabled selected>---Select an option---</option>
+                    <option value="self-serve">Self-Service Pet Wash</option>
+                    <option value="bath">Bath Services</option>
+                    <option value="groom">Full Service Grooming</option>
+                    <option value="trim">Light Trim & Bath</option>
+                    <option value="gland">Anal Gland Expression</option>
+                    <option value="pawdicure">Pawdicure: Nails and Pads Trimmed & Filed</option>
+                    <option value="massage">Warm Water Hydro-bath & Massage</option>
+                    <option value="ears">Ears: Hair Removal and Cleansing</option>
+                    <option value="blowdry">Full Blow Dry and Brush Out</option>
+
+                </select>
+            </div>
+            <div class="input-container">
+                <label class="form-label" for="ownerName">Owner Name:</label>
+                <input class="form-control" type="text" name="ownerName" id="ownerName">
+            </div>
+            <div class="input-container">
+                <label for="contactPhone">Contact Phone:</label>
+                <input class="form-control" type="tel" name="phone" id="contactPhone">
+            </div>
+            <!--button here (refresh the website)-->
+        </form>
+
+    
+        <center><button id="btn-register" class="btn btn-primary">Register</button></center>
+
+    </td>
+    <td>
+        <table id="petList" class="list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Breed</th>
+                    <th>Weight</th>
+                    <th>Service</th>
+                    <th>Pet Owner</th>
+                    <th>Contact Phone</th>
+                    <th>Remove Pet</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                
+                    <td>Scooby</td>
+                    <td>50</td>
+                    <td>Male</td>
+                    <td>Dane</td>
+                    <td>55 lbs</td>
+                    <td>Bath Services</td>
+                    <td>Shaggy</td>
+                    <td>555-555-5555</td>
+                    <td><button onclick="deletePet();">❌</button></td>
+    
+                </tr>
+                <tr>
+                    
+                    <td>Scrappy</td>
+                    <td>40</td>
+                    <td>Male</td>
+                    <td>Dane</td>
+                    <td>75 lbs</td>
+                    <td>Full Service Grooming</td>
+                    <td>Shaggy</td>
+                    <td>666-666-6666</td>
+                    <td><button onclick="deletePet();">❌</button></td>
+    
+                </tr>
+                <tr>
+                    
+                    <td>Genie</td>
+                    <td>5</td>
+                    <td>Female</td>
+                    <td>Maltipoo</td>
+                    <td>15 lbs</td>
+                    <td>Self-Service Pet Wash</td>
+                    <td>Jane</td>
+                    <td>888-888-8888</td>
+                    <td><button onclick="deletePet();">❌</button></td>
+    
+                </tr>
+                <tr>
+                    
+                    <td>Pebbles</td>
+                    <td>2</td>
+                    <td>Female</td>
+                    <td>Schnauzer</td>
+                    <td>14 lbs</td>
+                    <td>Light Trim & Bath</td>
+                    <td> Jane</td>
+                    <td>888-888-8888</td>
+                    <td><button onclick="deletePet(Pet);">❌</button></td>
+    
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+</table>
+        
+        <div id="info">
+            
+
+        </div>
+
+        <!---<table id="displayTable">
+            <thead>
+            <tr>
+                <th><h1>Name</h1></th>
+                <th><h1>Age</h1></th>
+                <th><h1>Gender</h1></th>
+                <th><h1>Breed</h1></th>
+                <th><h1>Weight (lbs)</h1></th>
+                <th><h1>Service</h1></th>
+                <th><h1>Owner Name</h1></th>
+                <th><h1>Contact Number</h1></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>Scooby</td>
+                <td>50</td>
+                <td>Male</td>
+                <td>Dane</td>
+                <td>55 lbs</td>
+                <td>Bath Services</td>
+                <td>Shaggy</td>
+                <td>555-555-5555</td>
+
+            </tr>
+            <tr>
+                
+                <td>Scrappy</td>
+                <td>40</td>
+                <td>Male</td>
+                <td>Dane</td>
+                <td>75 lbs</td>
+                <td>Full Service Grooming</td>
+                <td>Shaggy</td>
+                <td>666-666-6666</td>
+
+            </tr>
+            <tr>
+                
+                <td>Genie</td>
+                <td>5</td>
+                <td>Female</td>
+                <td>Maltipoo</td>
+                <td>15 lbs</td>
+                <td>Self-Service Pet Wash</td>
+                <td>Jane</td>
+                <td>888-888-8888</td>
+
+            </tr>
+            <tr>
+                
+                <td>Pebbles</td>
+                <td>2</td>
+                <td>Female</td>
+                <td>Schnauzer</td>
+                <td>14 lbs</td>
+                <td>Light Trim & Bath</td>
+                <td> Jane</td>
+                <td>888-888-8888</td>
+
+            </tr>
+            
+            
+        </tbody>
+    
+    
+    </table>--->
+
+    <div>
+        <input type="search" name="search" id="searchPet">
+        <button id="btn-search">Search</button>
+        
+        <div id="alert" class="alert alert-success hide" role="alert">
+                A Pet is registered!
+            </div>
+            <div id="failed" class="alert alert-danger hide" role="alert">
+                Please complete all the fields!
+            </div>
+    </div>
+
+        <div id="pets"></div>
+
+
+
+    </main>
+    <script src="register.js"></script>
+</body>
+</html>
